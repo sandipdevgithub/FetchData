@@ -23,7 +23,12 @@ const Users = () => {
   }, []);
 
   const userEmail = userdata.map((item, index) => {
-    return <li key={"user" + index}>{item.email}</li>;
+    return (
+      <li key={"user" + index}>
+        <strong>Name</strong>: {item.username} / <strong>Email</strong>:{" "}
+        {item.email} / <strong>City</strong>: {item.address.city}{" "}
+      </li>
+    );
   });
   return <div>{loading ? <ul>{userEmail}</ul> : <div>Loading</div>}</div>;
 };
